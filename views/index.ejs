@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Trivia index page</h1>
+        
+        <nav>
+            <a href="/trivias/new">Create a New Trivia Question</a>
+        </nav>
+            <ul>
+                <% for(let i=0; i<trivias.length; i++) { %>
+                <li>
+                    <a href="/trivias/<%=trivias[i].id%>"> <%=trivias[i].question%> </a>
+                    <!--  ADD DELETE FORM HERE-->
+			        <form action="/trivias/<%=trivias[i].id; %>?_method=DELETE" method="POST">
+				        <input type="submit" value="DELETE"/>
+			        </form>
+                    <!-- Add edit link here  -->
+                    <a href="/trivias/<%=trivias[i].id; %>/edit">Edit</a>
+
+                </li>
+                <% } %>
+            </ul>
+          
+       
+    </body>
+</html>

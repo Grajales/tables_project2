@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Edit Fruit Page</h1>
+        <form action="/trivias/<%=trivias[i].id; %>?_method=PUT" method="POST">
+		<!--  NOTE: the form is pre-populated with values for the server-->
+		Question: <input type="text" name="question" value="<%=trivia.question%>"/><br/>
+		Answer: <input type="text" name="answer" value="<%=trivia.answer%>"/><br/>
+		Wrong1: <input type="text" name="wrong1" value="<%=trivia.wrong1%>"/><br/>
+        Wrong2: <input type="text" name="wrong2" value="<%=trivia.wrong2%>"/><br/>
+        Wrong3: <input type="text" name="wrong3" value="<%=trivia.wrong3%>"/><br/>
+
+		<br/>
+		<input type="submit" name="" value="Submit Changes"/>
+        </form>
+    </body>
+</html>

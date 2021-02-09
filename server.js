@@ -1,10 +1,11 @@
 const express = require('express'); //from documentation: express is function
 const app = express();//app is an object
-
-app.get('/somedata', (req, res) => {
-    res.send('here is your information');
-});
-
+//include the method-override package
+const methodOverride = require('method-override');
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
+app.use("/trivias", require("./controllers/triviasController.js"));
+app.use(express.static("public"));
 
 
 
