@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/trivias", require("./controllers/triviasController.js"));
+app.use("/users", require("./controllers/usersController.js"));
 app.use(express.static("public"));
 
 
