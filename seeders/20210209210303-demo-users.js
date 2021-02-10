@@ -8,7 +8,7 @@ module.exports = {
         {
           name: "Tony Stark",
           username: "ironman",
-          password: "prettyawesome",
+          password: "pretty",
         },
         {
           name: "Clark Kent",

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>Trivia show page</h1>
-    </body>
-</html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia App</title>
+  </head>
+  <body>
+    <h1>Trivia Show Page</h1>
+    The trivia question is: <%= trivia.question %> <br>
+    the asnwer is: <%= trivia.answer %>. <br>
+    It is added by:  <%=trivia.User.name%>
+<!-- 
+    <form action="/trivias/<%= trivia.id %>?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE <%= trivia.question %>" />
+    </form> -->
+  </body>
+</html>

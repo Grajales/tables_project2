@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1>Edit Fruit Page</h1>
-        <form action="/trivias/<%=trivias[i].id; %>?_method=PUT" method="POST">
+        <h1>Edit Trivia</h1>
+        <form action="/trivias/<%= trivia.id %>?_method=PUT" method="POST">
 		<!--  NOTE: the form is pre-populated with values for the server-->
 		Question: <input type="text" name="question" value="<%=trivia.question%>"/><br/>
 		Answer: <input type="text" name="answer" value="<%=trivia.answer%>"/><br/>

@@ -21,15 +21,15 @@
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User" />
     </form>
-    <!-- <h3>Fruits added by you:</h3>
+    <h3>Trivia added by you:</h3>
     <ul>
-      <% for (let i = 0; i < user.Fruits.length; i++) { %>
+      <% for (let i = 0; i < user.Trivias.length; i++) { %>
         <li>
-          <a href="/fruits/<%= user.Fruits[i].id %>"><%= user.Fruits[i].name %></a>
+          <a href="/trivias/<%= user.Trivias[i].id %>"><%= user.Trivias[i].question %></a>
         </li>
         <br>
         <% } %>
-    </ul> -->
+    </ul>
     <br /><br />
     <a href="/trivias">View All Trivia Questions</a>
   </body>

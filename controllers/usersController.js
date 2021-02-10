@@ -2,32 +2,80 @@ const express = require("express");
 const router = express.Router();
 
 const User = require('../models').User;
-const Trivia = require('../models').Trivia;
+const Trivia = require('../models').Trivias;
 // INDEX
 router.get("/", (req, res) => {
   res.render("users/index.ejs");
 });
+// GET SIGNUP FORM
+router.get("/signup", (req, res) => {
+  res.render("users/signup.ejs");
+});
 
+// GET LOGIN
+router.get("/login", (req, res) => {
+  res.render("users/login.ejs");
+});
 
+// POST LOGIN
+router.post("/login", (req, res) => {
+  User.findAll({
+    where: {
+      username: req.body.username,
+      password: req.body.password
+    }
+  }).then((users) => {
+    if (users.length > 0) {
+      console.log('username/password combo is correct');
+      let user = users[0];
+      res.redirect(`/users/profile/${user.id}`);
+    } else {
+      console.log('username/password combo is not correct');
+      res.redirect('/users');
+    }
+  });
+});
+
+// POST - CREATE NEW USER FROM SIGNUP
+router.post("/", (req, res) => {
+  User.create(req.body).then(newUser => {
+    res.redirect(`/users/profile/${newUser.id}`);
+  });
+});
+
+// GET USERS PROFILE
+
+// router.get("/profile/:id", (req, res) => {
+//    if (req.user.id == req.params.id) {
+//     User.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Trivia,
+//           attributes: ["id", "question"],
+//         },
+//       ],
+//     }).then((userProfile) => {
+//       res.render("users/profile.ejs", {
+//         user: userProfile,
+//       });
+//     });
+//   } else {
+//     // res.json("unauthorized");
+//     res.redirect("/");
+//   }
+// });
+// GET USERS PROFILE
 router.get("/profile/:id", (req, res) => {
-  // IF USER ID FROM TOKEN MATCHES THE REQUESTED ENDPOINT, LET THEM IN
-  if (req.user.id == req.params.id) {
-    User.findByPk(req.params.id, {
-      include: [
-        {
-          model: Trivia,
-          attributes: ["id", "name"],
-        },
-      ],
-    }).then((userProfile) => {
-      res.render("users/profile.ejs", {
-        user: userProfile,
-      });
-    });
-  } else {
-    // res.json("unauthorized");
-    res.redirect("/");
-  }
+  User.findByPk(req.params.id, {
+    include: [
+      {
+        model: Trivia,
+        attributes: ['id', 'question']
+      }
+    ]
+  }).then((user) => {
+    res.render("users/profile.ejs", { user });
+  });
 });
 
 // EDIT PROFILE
