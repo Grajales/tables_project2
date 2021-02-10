@@ -2,13 +2,15 @@ const express = require('express'); //from documentation: express is function
 const app = express();//app is an object
 //include the method-override package
 const methodOverride = require('method-override');
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/trivias", require("./controllers/triviasController.js"));
 app.use("/users", require("./controllers/usersController.js"));
-app.use(express.static("public"));
-
-
+//Index
+app.get('/', (req, res) => {
+    res.render('users/index.ejs')
+  })
 
 
 app.listen(3000, ()=>{
