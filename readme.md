@@ -14,7 +14,8 @@ For this project, a full CRUD app using the technologies outlined below. When th
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-- [img/Screen Shot 2021-02-11 at 4.43.05 PM.png]()
+- ![Tables Wire Frame](img/Screen Shot 2021-02-11 at 4.43.05 PM.png)
+
 - [react architecture]()
 
 
