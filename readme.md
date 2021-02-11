@@ -7,14 +7,14 @@ For this project, a full CRUD app using the technologies outlined below. When th
 
 ## Project Links
 
-- [github repo]()
-- [deployment]()
+- [https://github.com/Grajales/tables_project2]()
+- [https://dashboard.heroku.com/apps/associatedtablesprj2]()
 
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-- [wireframes]()
+- [img/Screen Shot 2021-02-11 at 4.43.05 PM.png]()
 - [react architecture]()
 
 
