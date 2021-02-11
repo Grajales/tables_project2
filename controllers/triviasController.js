@@ -4,7 +4,7 @@ const router = express.Router();
 const Trivia = require('../models').Trivias;
 // const Trivia = require('../models').Trivia;
 const User =require('../models').User;
-// const Languages = require("../models").Languages;
+const Language = require("../models").Language;
 
 //Sequelize GET route
 router.get("/", (req, res) => {
@@ -30,8 +30,11 @@ router.get("/:id", (req, res) => {
   Trivia.findByPk(req.params.id, {
       include : [{
           model: User,
-          attributes: ['name']
-      }],
+          attributes: ['name'],
+      },
+      {
+        model: Language,
+      },],
       attributes: ['question', 'answer', 'wrong1', 'wrong2', 'wrong3']
   })
   .then(trivia => {
@@ -43,10 +46,12 @@ router.get("/:id", (req, res) => {
 });
 //Update a Trivia Question - render EDIT & UPDATE
 router.get("/:id/edit", function (req, res) {
-  Trivia.findByPk(req.params.id).then((trivia) => {
-    console.log(trivia);
-    res.render("edit.ejs", {
-      trivia: trivia,
+  Trivia.findByPk(req.params.id).then((foundTrivia) => {
+    Language.findAll().then((allLanguages) => {
+      res.render("edit.ejs", {
+        trivia: foundTrivia,
+        languages: allLanguages,
+      });
     });
   });
 });
@@ -57,9 +62,16 @@ router.put("/:id", (req, res) => {
     where: { id: req.params.id },
     returning: true,
   }).then((trivia) => {
-    res.redirect("/trivias");
+    Language.findByPk(req.body.language).then((foundLanguage) => {
+      Trivia.findByPk(req.params.id).then((foundTrivia) => {
+        foundTrivia.addLanguage(foundLanguage);
+        res.redirect("/trivias");
+      });
+    });
   });
 });
+
+
 //Delete a Trivia Question - DELETE route
 router.delete("/:id", (req, res) => {
   Trivia.destroy({ where: { id: req.params.id } }).then(() => {

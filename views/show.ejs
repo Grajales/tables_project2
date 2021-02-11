@@ -10,6 +10,15 @@
     The trivia question is: <%= trivia.question %> <br>
     the asnwer is: <%= trivia.answer %>. <br>
     It is added by:  <%=trivia.User.name%>
+
+    <h3>It is available in Languages:</h3>
+    <% for (let i=0; i< trivia.Languages.length; i++){ %>
+    <li>
+      <!-- <a href="/languages/<%=trivia.Languages[i].id%>"> -->
+        <%=trivia.Languages[i].name%></a>
+    </li>
+    <br />
+    <% } %>
 <!-- 
     <form action="/trivias/<%= trivia.id %>?_method=DELETE" method="POST">
       <input type="submit" value="DELETE <%= trivia.question %>" />

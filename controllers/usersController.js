@@ -43,27 +43,7 @@ router.post("/", (req, res) => {
   });
 });
 
-// GET USERS PROFILE
 
-// router.get("/profile/:id", (req, res) => {
-//    if (req.user.id == req.params.id) {
-//     User.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Trivia,
-//           attributes: ["id", "question"],
-//         },
-//       ],
-//     }).then((userProfile) => {
-//       res.render("users/profile.ejs", {
-//         user: userProfile,
-//       });
-//     });
-//   } else {
-//     // res.json("unauthorized");
-//     res.redirect("/");
-//   }
-// });
 // GET USERS PROFILE
 router.get("/profile/:id", (req, res) => {
   User.findByPk(req.params.id, {
