@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express'); //from documentation: express is function
 const app = express();//app is an object
 //include the method-override package
@@ -13,6 +14,9 @@ app.get('/', (req, res) => {
   })
 
 
-app.listen(3000, ()=>{
-    console.log("I am listening");
-});
+// app.listen(3000, ()=>{
+//     console.log("I am listening");
+// });
+app.listen(process.env.PORT, ()=>{
+   console.log("I am listening");
+ });
