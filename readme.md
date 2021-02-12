@@ -1,9 +1,9 @@
 # Project Overview
-This project provides an app that allows users to catalogue trivia questions in several languages, link each question to four possible answers, and also identify the correct answer.  The questions and solutions can be used by teachers for their tests, trivia game developers, and language instructors among others.
+This project provides an app that allows users to catalogue trivia or multiple choice exam questions in several languages, link each question to four possible answers, and also identify the correct answer.  The questions and solutions can be used by teachers for their multiple choice tests, trivia game developers, and language instructors among others.
  
 ## Project Description
 
-For this project, a full CRUD app using the technologies outlined below. When thinking of an app idea, try to frame the project in terms of trying to solve a "problem" and think about the purpose of the app, who would use it, etc. The problem doesn't have to be anything intense and can be something small and simple! For example:
+For this project, a full CRUD app using the technologies outline
 
 ## Project Links
 
@@ -105,6 +105,6 @@ module.exports = (sequelize, DataTypes) => {
 ## Issues and Resolutions
  When creating the models, using "npx sequelize model:generate --name Trivia --attributes question:string,answer:string,wrong1:string,wrong2:string,wrong3:string", the action did not add an "s" to Trivia. So I manually added the "s" to align with the "Fruits" model, this created many problems, so the solution was to modify all "Trivia" references to be "Trivias" in the Trivia.js model file.
 
-#### SAMPLE.....
+#### SAMPLE
 **ERROR**: Trivia relation not found                                
 **RESOLUTION**: See Issues and Resolutions

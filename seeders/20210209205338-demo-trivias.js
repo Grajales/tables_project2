@@ -37,6 +37,37 @@ module.exports = {
           updatedAt: new Date(),
           userId: 3,
       },
+      {
+        question:'ne mettez pas tous vos œufs dans le même  ____",',
+        answer: 'panier',
+        wrong1: 'trou',
+        wrong2: 'valise',
+        wrong3: 'sac à dos',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        userId: 1,
+    },
+    {
+      question:'no ponga todos los huevos en la misma  ____",',
+      answer: 'canasta',
+      wrong1: 'hueco',
+      wrong2: 'maleta',
+      wrong3: 'mochila',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userId: 2,
+  },
+  {
+    question:'non mettere tutte le uova nello stesso  ____",',
+    answer: 'paniere',
+    wrong1: 'buco',
+    wrong2: 'valigia',
+    wrong3: 'zaino',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    userId: 2,
+},
+      
     ],
     {}
   );
