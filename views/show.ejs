@@ -12,13 +12,13 @@
     <i>  <%= trivia.question %> </i> <br>
     
     the suggested wrong answers are: <br>
-    <ol> 
+    <ul> 
     <li>  <i> <%= trivia.wrong1 %>.</i> </li>
     <li> <i> <%= trivia.wrong2 %>.</i> </li>
     <li> <i> <%= trivia.wrong3 %>.</i> </li>
+  </ul>
 
-    The asnwer is: <i><%= trivia.answer %>.</i> <br>
-  </ol>
+  The asnwer is: <i><%= trivia.answer %>.</i> <br>
     It is added by:  <%=trivia.User.name%>
 
     <h3>It is available in Languages:</h3>
