@@ -10,54 +10,65 @@ For this project, a full CRUD app using the technologies outlined below. When th
 - [https://github.com/Grajales/tables_project2]()
 - [https://dashboard.heroku.com/apps/associatedtablesprj2]()
 
-## Wireframes
+## Definitions
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+Here is a list of the process and tools used
 
-- ![Tables Wire Frame](img/blockDiagram.png)
-<!-- <img src="markdownmonstericon.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" /> -->
+- [RESTul components](https://gist.github.com/alexpchin/09939db6f81d654af06b)
 
-- [react architecture]()
+
+
+
 
 
 
 Define the the React components and the architectural design of your app.
 
-### MVP/PostMVP - 5min
+### User Stories
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+User Stories:
+1.	As a developer I want specify the table structures  so that I can use them as seeders
+2.	As a developer I want specify the steps require to sequelize so that I can use them to develop the code (Node.js, Postgres, Express and EJS)
+
+3.	As a developer I want write the starter files so that I can start creating code
+
+
+4.	As a developer I want develop the MVC structures  so that I can use for the app (Models, Views, Controllers)
+
+5.	As a developer I want to develop 7 RESTful routes and full CRUD.
+so that I and others can enter, edit, and delete list data  (RESTful: Post, Put, Get) and (CRUD:Create, Read, Update, Delete)
+
+6.	As a developer I want to sequelize the data so I can easily create, edit, and update tables 
+
+7.	As a developer I want create seed tables so that I and others can enter future data to the lists
+
+8.	As a developer I want to code in CSS so that the webpage has some user friendly features and appealing view
+
+9.	As a developer I want to deploy the project in Heroku so that I and others can run the app online
+
+10.	As a developer I want document the code in a readme file so that I and others can understand the project
+  
 
 #### MVP EXAMPLE
 - Find and use external api 
 - Render data on page 
 - Allow user to interact with the page
 
-#### PostMVP EXAMPLE
+#### Final Table Relations
 
-- Add localStorage or firebase for storage
+- ![Entity Relationship Diagram (ERD)](img/blockDiagram.png)
 
-## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
-
-| Component | Description | 
-| --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
 
 ## Time Frames
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding Form | H | 3.5 hrs | 4 hrs |
+| Working with API | H | 10 hrs| 12 hrs |
+| Total | H | 13.5 hrs| 16 hrs |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
