@@ -51,7 +51,9 @@ so that I and others can enter, edit, and delete list data  (RESTful: Post, Put,
 #### Final Table Relations
 
 - ![Entity Relationship Diagram (ERD)](img/blockDiagram.png) <br>
+User Restful Routes
 - ![User Restful Routes](img/user.png)<br>
+Trivia Restful Routes
 - ![Trivia Restful Routes](img/trivia.png)<br>
 Nodemon links:
 - [http://localhost:3000/trivias]()
