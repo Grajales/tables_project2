@@ -109,3 +109,7 @@ module.exports = (sequelize, DataTypes) => {
 #### SAMPLE
 **ERROR**: Trivia relation not found                                
 **RESOLUTION**: See Issues and Resolutions
+
+## Future additions
+1. I would like to change the view of the index.ejs page so it organizes the questions in columns for each language.
+2. I would like to add a redirect option in the show.ejs file in the list of available languages, when one clicks on a language, it directs the user to the same question in another language. 
