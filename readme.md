@@ -50,13 +50,13 @@ so that I and others can enter, edit, and delete list data  (RESTful: Post, Put,
 
 #### Final Table Relations
 
-- ![Entity Relationship Diagram (ERD)](img/blockDiagram.png)
-- ![User Restful Routes](img/user.png)
-- ![Trivia Restful Routes](img/trivia.png)
+- ![Entity Relationship Diagram (ERD)](img/blockDiagram.png) <br>
+- ![User Restful Routes](img/user.png)<br>
+- ![Trivia Restful Routes](img/trivia.png)<br>
 Nodemon links:
 - [http://localhost:3000/trivias]()
-- [http://localhost:3000/users]()
-Heruko Links:
+- [http://localhost:3000/users]()<br>
+Heruko Links:<br>
 - [https://associatedtablesprj2.herokuapp.com/trivias]()
 - [https://associatedtablesprj2.herokuapp.com/trivias/2]()
 - [https://associatedtablesprj2.herokuapp.com/trivias/1/edit]()
