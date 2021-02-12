@@ -3,7 +3,8 @@ This project provides an app that allows users to catalogue trivia or multiple c
  
 ## Project Description
 
-For this project, a full CRUD app using the technologies outline
+For this project, a full CRUD (Create, Read, Update, Delete) app using the Node.js, Postgres, Express and EJS tools to develop the code . In addition to adhering to the MVC structures (Models, Views, Controllers) for the app.
+The tables and data will be sequelize and the project will be deployed in Heroku.
 
 ## Project Links
 
