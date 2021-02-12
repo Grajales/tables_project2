@@ -14,15 +14,8 @@ For this project, a full CRUD app using the technologies outlined below. When th
 
 Here is a list of the process and tools used
 
-- [RESTul components](https://gist.github.com/alexpchin/09939db6f81d654af06b)
+- [RESTful components](https://gist.github.com/alexpchin/09939db6f81d654af06b)
 
-
-
-
-
-
-
-Define the the React components and the architectural design of your app.
 
 ### User Stories
 
@@ -65,27 +58,53 @@ so that I and others can enter, edit, and delete list data  (RESTful: Post, Put,
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
+| --- | :---: |  :---: | :---: |
 | Adding Form | H | 3.5 hrs | 4 hrs |
 | Working with API | H | 10 hrs| 12 hrs |
 | Total | H | 13.5 hrs| 16 hrs |
 
-## Additional Libraries
+## References
  Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+The following code shows how I had to modify the reference "Trivia" to "Trivias" in the trivia.js file.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Trivias extends Model {
+
+    static associate(models) {
+      Trivias.belongsTo(models.User, { foreignKey: "userId" });
+      Trivias.belongsToMany(models.Language, {
+        through: "LanguageTrivia",
+        foreignKey: "triviaId",
+        otherKey: "languageId",
+      });
+    }
+  };
+  Trivias.init({
+    question: DataTypes.STRING,
+    answer: DataTypes.STRING,
+    wrong1: DataTypes.STRING,
+    wrong2: DataTypes.STRING,
+    wrong3: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
+  }, {
+    sequelize,
+    modelName: 'Trivias',
+  });
+  return Trivias;
+};
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+ When creating the models, using "npx sequelize model:generate --name Trivia --attributes question:string,answer:string,wrong1:string,wrong2:string,wrong3:string", the action did not add an "s" to Trivia. So I manually added the "s" to align with the "Fruits" model, this created many problems, so the solution was to modify all "Trivia" references to be "Trivias" in the Trivia.js model file.
 
 #### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: Trivia relation not found                                
+**RESOLUTION**: See Issues and Resolutions
