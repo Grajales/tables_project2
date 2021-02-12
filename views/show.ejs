@@ -10,12 +10,14 @@
     <h1>Trivia Show Page</h1>
     The trivia question is: <br>
     <i>  <%= trivia.question %> </i> <br>
-    the asnwer is: <i><%= trivia.answer %>.</i> <br>
+    
     the suggested wrong answers are: <br>
     <ol> 
     <li>  <i> <%= trivia.wrong1 %>.</i> </li>
     <li> <i> <%= trivia.wrong2 %>.</i> </li>
     <li> <i> <%= trivia.wrong3 %>.</i> </li>
+
+    The asnwer is: <i><%= trivia.answer %>.</i> <br>
   </ol>
     It is added by:  <%=trivia.User.name%>
 
